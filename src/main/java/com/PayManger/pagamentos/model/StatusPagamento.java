@@ -1,12 +1,12 @@
 package com.PayManger.pagamentos.model;
 
-public enum StatusTransacao {
+public enum StatusPagamento {
     BOLETO("Boleto"),
     PIX("pix"),
     CARTAO_CRÉDITO("Crédito"),
     CARTA_DÉBITO("Débito");
 
-    StatusTransacao(String descriao) {
+    StatusPagamento(String descriao){
 
     }
 }
