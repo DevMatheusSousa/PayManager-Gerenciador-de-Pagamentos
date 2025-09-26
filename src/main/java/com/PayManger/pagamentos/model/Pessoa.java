@@ -10,12 +10,6 @@ public abstract class Pessoa {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
-
-        //"--- Validação de E-mail ---"
-        boolean validarEmail = email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$");
-        String emailEValido = (validarEmail) ? "Email válido" : "Email inválido";
-        System.out.println(emailEValido);
-
     }
 
     public String getNome() {
@@ -46,13 +40,4 @@ public abstract class Pessoa {
         return id;
     }
 
-    @Override
-    public String toString() {
-        return "Pessoa{" +
-                "nome='" + nome + '\'' +
-                ", id=" + id +
-                ", cpf=" + cpf +
-                ", email='" + email + '\'' +
-                '}';
-    }
 }

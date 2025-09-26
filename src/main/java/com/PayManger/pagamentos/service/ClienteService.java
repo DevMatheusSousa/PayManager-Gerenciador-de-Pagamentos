@@ -9,15 +9,22 @@ public class ClienteService {
 
     private List<Cliente> listaDeClientes = new ArrayList<>();
 
-    public void adicionarCliente(Cliente cliente){
-        listaDeClientes.add(cliente);
-    }
-
-    public void listarCliente(){
-        if(listaDeClientes.isEmpty()){
+    public void listarCliente() {
+        if (listaDeClientes.isEmpty()) {
             System.out.println("Nenhum cliente encontrado!");
-        }else {
+        } else {
             listaDeClientes.forEach(System.out::println);
         }
+    }
+
+    public boolean cadastrarCliente(Cliente cliente) {
+
+        if (!cliente.getEmail().matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$")) {
+            System.out.println("Cliente nao cadastrado email invalido!");
+            return false;
+        }
+        listaDeClientes.add(cliente);
+        System.out.println("Cliente cadastrado com sucesso!");
+        return true;
     }
 }
