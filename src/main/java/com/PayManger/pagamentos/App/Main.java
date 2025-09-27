@@ -1,9 +1,14 @@
 package com.PayManger.pagamentos.App;
 
 import com.PayManger.pagamentos.model.Cliente;
+import com.PayManger.pagamentos.model.Pedido;
 import com.PayManger.pagamentos.model.Pessoa;
+import com.PayManger.pagamentos.model.Produto;
 import com.PayManger.pagamentos.service.ClienteService;
+import com.PayManger.pagamentos.service.FormasDePagamento;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -25,16 +30,21 @@ public class Main {
         System.out.print("Digite seu email: ");
         String meuEmail = scanner.nextLine();
 
+        System.out.print("Digite seu id: ");
+        Long saldo = scanner.nextLong();
+        scanner.nextLine();
 
 
-        ClienteService clienteService = new ClienteService();
-
-        Cliente cliente = new Cliente(12, "Matheus Sousa", 70624258181L, "matheusdev@gmail.com");
-
-        clienteService.adicionarCliente(cliente);
 
 
-        clienteService.listarCliente();
-        clienteService.cadastrarCliente(new Cliente(meuId, meuNome, meuCpf, meuEmail));
+        Cliente matheus = new Cliente(meuId, meuNome, meuCpf, meuEmail, saldo);
+        List<Produto> listaDeProduto = new ArrayList<>();
+        listaDeProduto.add(new Produto("Pc gamer", 2500D ));
+        FormasDePagamento pagamento = new FormasDePagamento();
+        pagamento.pagamentoBoleto("1231241234123123");
+
+        matheus.adicionarPedido(new Pedido(matheus, listaDeProduto, pagamento ));
+
+
     }
 }

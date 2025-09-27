@@ -1,12 +1,15 @@
 package com.PayManger.pagamentos.model;
 
 public enum StatusPagamento {
-    BOLETO("Boleto"),
-    PIX("pix"),
-    CARTAO_CRÉDITO("Crédito"),
-    CARTA_DÉBITO("Débito");
+    PENDENTE("Pendente"),
+    PROCESSADO("Processado"),
+    CONCLUIDO("Concluido"),
+    FALHOU("Falhou"),
+    ESTORNOU("Estornou"),
+    CANCELADO("Cancelado");
 
-    StatusPagamento(String descriao){
+     StatusPagamento(String descricao){
 
     }
+
 }

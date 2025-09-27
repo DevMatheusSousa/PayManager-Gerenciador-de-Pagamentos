@@ -40,4 +40,9 @@ public abstract class Pessoa {
         return id;
     }
 
+    @Override
+    public String toString(){
+        return "Nome: " + getNome() +"\nCpf: " + getCpf() + "\nEmail: " + getEmail();
+    }
+
 }
