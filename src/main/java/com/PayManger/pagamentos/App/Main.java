@@ -2,24 +2,36 @@ package com.PayManger.pagamentos.App;
 
 import com.PayManger.pagamentos.model.Cliente;
 import com.PayManger.pagamentos.model.Pedido;
-import com.PayManger.pagamentos.model.Pessoa;
 import com.PayManger.pagamentos.model.Produto;
-import com.PayManger.pagamentos.service.ClienteService;
-import com.PayManger.pagamentos.service.FormasDePagamento;
+import com.PayManger.pagamentos.model.FormasDePagamento;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
 
+//        FormasDePagamento pagamento = new FormasDePagamento();
+//        pagamento.pagamentoBoleto("1231241234123123");
+
+
+
+
+
+        Cliente cliente1 = new Cliente(1, "Matheus", 70624258181L,"dev.matheus@gmail.com");
+        Produto produto1 = new Produto();
         List<Produto> listaDeProduto = new ArrayList<>();
         listaDeProduto.add(new Produto("Pc gamer", 2500D ));
-        FormasDePagamento pagamento = new FormasDePagamento();
-        pagamento.pagamentoBoleto("1231241234123123");
 
+
+        FormasDePagamento pagamento = new FormasDePagamento();
+        pagamento.pagamentoPix("70624258181");
+
+        cliente1.adicionarPedido(new Pedido(cliente1, listaDeProduto, pagamento));
+        Pedido pedido = new Pedido(cliente1, listaDeProduto, pagamento);
+        pedido.pagamentoConcluido();
+        System.out.println();
         // matheus.adicionarPedido(new Pedido(matheus, listaDeProduto, pagamento ));
 
 

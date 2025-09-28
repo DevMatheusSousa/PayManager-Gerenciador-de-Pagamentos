@@ -1,2 +1,4 @@
-package com.PayManger.pagamentos.controller;public class UsuarioRepository {
+package com.PayManger.pagamentos.repository;
+
+public class UsuarioRepository {
 }

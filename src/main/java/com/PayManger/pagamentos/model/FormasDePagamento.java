@@ -1,6 +1,8 @@
-package com.PayManger.pagamentos.service;
+package com.PayManger.pagamentos.model;
 
-public class FormasDePagamento implements PagamentoService{
+import com.PayManger.pagamentos.service.PagamentoService;
+
+public class FormasDePagamento implements PagamentoService {
     @Override
     public String pagamentoBoleto(String boleto) {
         if(boleto != null && boleto.matches("\\d{47}")){

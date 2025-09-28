@@ -5,6 +5,10 @@ public class Produto {
     private Double preco;
     private Double desconto = 0.10;
 
+    public Produto() {
+
+    }
+
     public Produto(String nomeProduto, Double preco){
         this.nomeProduto = nomeProduto;
         this.preco = preco;

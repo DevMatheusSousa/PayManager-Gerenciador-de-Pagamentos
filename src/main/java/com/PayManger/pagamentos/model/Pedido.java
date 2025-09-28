@@ -1,7 +1,5 @@
 package com.PayManger.pagamentos.model;
 
-import com.PayManger.pagamentos.service.FormasDePagamento;
-
 import java.util.List;
 
 public class Pedido {
