@@ -1,5 +1,6 @@
 package com.PayManger.pagamentos.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
@@ -23,6 +24,7 @@ public class Pedido {
                 .sum();
     }
 
+
     public void pagamentoConcluido(){
         this.statusPagamento = StatusPagamento.CONCLUIDO;
         System.out.println("Pagamento Concluido.");
@@ -40,4 +42,34 @@ public class Pedido {
     public Double getValorTotal() {
         return ValorTotal;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n================ PEDIDO ================\n");
+        sb.append("Cliente: ").append(cliente.getNome())
+                .append(" (ID: ").append(cliente.getId()).append(")\n");
+        sb.append("E-mail: ").append(cliente.getEmail()).append("\n");
+        sb.append("----------------------------------------\n");
+        sb.append("Produtos:\n");
+
+        for (Produto p : produtos) {
+            sb.append(" - ").append(p.getNomeProduto())
+                    .append(" | Preço: R$").append(p.getPreco());
+
+            if (p.getDesconto() > 0) {
+                sb.append(" | Desconto: ").append(p.getDesconto() * 100).append("%");
+            }
+            sb.append("\n");
+        }
+
+        sb.append("----------------------------------------\n");
+        sb.append("Forma de Pagamento: ").append(formasDePagamento.pagamentoPix(String.valueOf(statusPagamento))).append("\n");
+        sb.append("Valor Total: R$").append(String.format("%.2f", getValorTotal())).append("\n");
+        sb.append("Status: ").append(statusPagamento).append("\n");
+        sb.append("========================================\n");
+
+        return sb.toString();
+    }
+
 }

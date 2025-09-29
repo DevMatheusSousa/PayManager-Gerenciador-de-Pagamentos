@@ -30,8 +30,7 @@ public class Main {
 
         cliente1.adicionarPedido(new Pedido(cliente1, listaDeProduto, pagamento));
         Pedido pedido = new Pedido(cliente1, listaDeProduto, pagamento);
-        pedido.pagamentoConcluido();
-        System.out.println();
+        System.out.println(pedido);
         // matheus.adicionarPedido(new Pedido(matheus, listaDeProduto, pagamento ));
 
 

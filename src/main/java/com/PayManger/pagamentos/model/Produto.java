@@ -1,10 +1,14 @@
 package com.PayManger.pagamentos.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Produto {
     private String nomeProduto;
     private Double preco;
     private Double desconto = 0.10;
 
+    private List<Cliente> clientes = new ArrayList<>();
     public Produto() {
 
     }
